@@ -1,4 +1,3 @@
-import 'package:ecommercestore/ForgotPasswordPage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -98,17 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                   ]),
                 ),
                 // Forgot Password Link
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => const ForgotPasswordPage()),
-                    );
-                  },
-                  child: const Text(
-                    'Forgot Password?',
-                    style: TextStyle(color: Colors.blueAccent),
-                  ),
-                ),
+
 
                 // Error message
                 if (errorMessage.isNotEmpty)

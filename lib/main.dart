@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'E-Commerce Store',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.cyanAccent),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
       ),
       home: const WelcomePage(), // Start with WelcomePage
     );
@@ -32,7 +32,7 @@ class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});
 
   @override
-  State<WelcomePage> createState() => _WelcomePageState();
+  State<WelcomePage> createState() => _WelcomePageState(); //first screen welcome page
 }
 class _WelcomePageState extends State<WelcomePage> {
   @override

@@ -108,7 +108,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : _favoriteItems.isEmpty
-          ? const Center(child: Text('No favorite items found'))
+          ? const Center(child: Text('No favorite items found',style: TextStyle(color: Colors.white),))
           : ListView.builder(
 
         itemCount: _favoriteItems.length,

@@ -1,6 +1,4 @@
-import 'package:ecommercestore/AboutUsPage.dart';
 import 'package:ecommercestore/AddToCartPage.dart';
-import 'package:ecommercestore/Drawer.dart';
 import 'package:ecommercestore/FavouritePage.dart';
 import 'package:ecommercestore/ProductCard.dart';
 import 'package:ecommercestore/ProductDetailsPage.dart';
@@ -193,7 +191,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text(
           'Jewel',
-          style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
+          style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 40),
         ),
         backgroundColor: Colors.transparent, // Make the background transparent to show the image
         flexibleSpace: Container(
@@ -206,7 +204,7 @@ class _HomePageState extends State<HomePage> {
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.shopping_cart_checkout_outlined, color: Colors.black),
+            icon: const Icon(Icons.shopping_cart_checkout_outlined, color: Colors.black,size:40),
             onPressed: () {
               Navigator.push(
                 context,
@@ -215,12 +213,18 @@ class _HomePageState extends State<HomePage> {
             },
           ),
           IconButton(
-            icon: const Icon(Icons.star_outline, color: Colors.black),
+            icon: const Icon(Icons.star_outline, color: Colors.black,size:40),
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => FavoritesPage()),
               );
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.logout, color: Colors.red,size:40),
+            onPressed: () async {
+              await FirebaseAuth.instance.signOut();
             },
           ),
         ],
@@ -282,7 +286,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
 
-      drawer: MyDrawer(),
+
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : Padding(
